@@ -14,7 +14,7 @@ import random
 import string
 # Create your views here.
 #allinfo=[]
-res=[]
+
 def home(request):
 
     if request.method=='POST':
@@ -25,8 +25,8 @@ def home(request):
             global allinfo 
             allinfo =newjob.scrap(job,location)
             
-            
-            print(allinfo)
+            res=[]
+            #print(allinfo)
             if(len(allinfo[0])==0):
                 return render(request,'index.html',{"error":True})
             for i in range(len(allinfo[0])):
@@ -38,10 +38,12 @@ def home(request):
                 #print(d)
                 res.append(d)
                 
-            print(res)
+            #print(res)
                 
             dic={'data':res}
             print(len(res))
+            request.session['data']=res
+            request.session['title']=job+" jobs in "+location+".csv"
             return render(request,'index.html',dic)
 
         except():
@@ -67,17 +69,15 @@ def save_file(request):
     import random
     import string
     from django.http import HttpResponse
-
-    temp=[]
-    temp=res
+    #print("------------------------------")
+    temp=request.session['data']
+    fname=request.session['title']
     
-    print("------------------")
-    print(temp)
-    
+    #print(fname)
     
 
     response = HttpResponse(content_type='text/csv')
-    response['Content-Disposition']= 'attachment; filename=Results.csv'
+    response['Content-Disposition']= 'attachment; filename={t}'.format(t=fname)
     
 
     
@@ -93,12 +93,6 @@ def save_file(request):
         link=element['link']
         company=element['company']
         my_fields=[title,location,company,link]
-        print("=========")
-        print(title)
-        print(location)
-        print(company)
-        print(link)
-
                                                                
         csv_writer.writerow([title, location, company,link])
 
