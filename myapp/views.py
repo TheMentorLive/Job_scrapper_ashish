@@ -14,6 +14,7 @@ import random
 import string
 # Create your views here.
 #allinfo=[]
+res=[]
 def home(request):
 
     if request.method=='POST':
@@ -23,8 +24,8 @@ def home(request):
         try:
             global allinfo 
             allinfo =newjob.scrap(job,location)
-            global res
-            res=[]
+            
+            
             print(allinfo)
             if(len(allinfo[0])==0):
                 return render(request,'index.html',{"error":True})
