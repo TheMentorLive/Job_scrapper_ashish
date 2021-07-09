@@ -1,73 +1,49 @@
 {% load static %}
-<html><head>
-    <style>
-     
-    body {
-      background-color: white;
-    
-      /* Center and scale the image nicely */
-    
-      overflow-y: hidden;
-      
-    }
-    </style>
-    <link rel="stylesheet" href="{% static 'design.css'%}">
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'style1.css'%}">
     <script src="{% static 'demo.js'%}"></script>
-
-
-    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </head>
-    <body style="background-color: white;">
-    <div>      
-    <a class="fusion-logo-link" style="position: absolute;top:0px;left:5%;right:300px;top:35px; height:10rem;" href="https://thementor.live/">
-      <img src="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png" srcset="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png 1x, https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png 2x" width="222" height="83" style="max-height:83px;height:auto;" alt="The Mentor Logo" data-retina_logo_url="https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png" class="fusion-sticky-logo">
-
-    </a>
-  </div>
-  
-
-
-
-  
-<div class="box" style="margin-top: 30px;">
- 
-      <img class="card-img-top"style="width: 500%; "src="{% static 'images/pic.jpeg'%}" alt="Card image cap">
-      <div class="card-body" >
-      
-        
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body style="background-color: white;">
+    <div class="mentor-logo">      
+      <a class="fusion-logo-link-1" href="https://thementor.live/">
+        <img src="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png" srcset="https://thementor.live/wp-content/uploads/2021/03/The-Mentor.png 1x, https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png 2x" width="222" height="83" style="max-height:83px;height:auto;" alt="The Mentor Logo" data-retina_logo_url="https://thementor.live/wp-content/uploads/2021/03/The-Mentor-Live-Retina-Logo.png" class="fusion-sticky-logo">
+      </a>
+    </div>
+    <div class="column1">
+      <img class="card-img-top" src="{% static 'images/pic.jpeg'%}" alt="Card image cap">
+      <div class="card-js">
+        <div class="card-js-counter-1 card-js-counter">
+          <div class="counter" >2700</div>
+          <div class="text" >Resumes Delivered</div>
+        </div>
+        <div class="card-js-counter-2 card-js-counter">
+          <div class="counter">550</div>
+          <div class="text">Linked in Profiles</div>
+        </div>
+        <div class="card-js-counter-3 card-js-counter">
+          <div class="counter">8000</div>
+          <div class="text">Job Links Distributed</div>
+        </div>
       </div>
     </div>
-<div>
-<div style="margin-bottom: 80px; white-space: nowrap">
-  <div class="content">
-    <div class="box">
-      <div>
-      <div class="counter" style="margin-left: 50px;" >2700</div>
-      <div class="text" style="margin-left: 45px;">Resumes Delivered</div>
+    <div class="column2">
+      <form action="{%url 'home'  %}" method="POST" class="form-box-1" >
+        <div class="header-text" style="color:rgb(89, 0, 255);">
+          Job Portal
+        </div>
+        <input type="text" id="job" placeholder="Enter Job Profile" name="job" ><br>
+        <input type="text" id="location" placeholder="Enter Location" name="location" ><br><br>
+        {%csrf_token%}
+        <button type="submit" style="background-color: rgba(63, 7, 218, 0.815);"> Submit </button>
+      </form> 
     </div>
-    <div>
-      <div class="counter" style="margin-left:100px;">550</div>
-      <div class="text" style="margin-left: 100px;">Linked in Profiles</div>
-    </div>
-    <div>
-      <div class="counter" style="margin-left:100px;">8000</div>
-      <div class="text" style="margin-left: 100px;">Job Links Distributed</div>
-    </div>
-  </div>    
-    </div>    
-  </div> 
-
-</div>
-
-
-  
-
     <script>
       $(document).ready(function(){
         $('.counter').counterUp({
@@ -75,29 +51,6 @@
           time: 1200
         });
       });
-      </script>
-    </div>
-    </div>
-      <div class="column2" >
-  
-         <form action="{%url 'home'  %}" method="POST" class="form-box" style="right: -55%; top:5px; border: 10px solid rgba(233, 226, 226, 0.671);background: #fff;background-clip:border-box;" enctype="multipart/form-data">
-          
-          <div class="header-text" style="color:rgb(89, 0, 255);">
-            Job Portal
-          </div>
-        
-        <input type="text" id="job" placeholder="Enter Job Profile" name="job" ><br>
-       
-        <input type="text" id="location" placeholder="Enter Location" name="location" ><br><br>
-        {%csrf_token%}
-       <button type="submit" style="background-color: rgba(63, 7, 218, 0.815);"> Submit </button>
-      </form>  
-    </div>
-
-
-  
-</div>
-
-</div>
-    
-    </body></html>
+    </script>
+</body>
+</html>

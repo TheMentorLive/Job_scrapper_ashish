@@ -1,0 +1,174 @@
+body {
+    background-color: white;
+    /* Center and scale the image nicely */
+    /* overflow-y: hidden; */
+}
+.mentor-logo{
+  /* position: absolute; */
+  top:0px;
+  margin-left:43px; 
+}
+.column1 .card-img-top{
+  width: auto;
+  height: 500px;
+}
+.card-js{
+  margin-left: 87px;
+}
+.card-js .counter{
+  font-size: 50px;
+  font-weight: 500;
+  color: #4a3ef1;
+  font-family: sans-serif;
+}
+.counter{
+  margin-left: 15px;
+}
+.card-js-counter{
+  margin-right: 5px;
+}
+.card-js-counter-1{
+  /* width: 25%; */
+  display: inline-block;
+}
+.card-js-counter-2{
+  /* width: 25%; */
+  display: inline-block;
+}
+.card-js-counter-3{
+  /* width: 25%; */
+  display: inline-block;
+}
+.column1{
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+.column2{
+  width: 50%;
+  display: inline-block;
+  /* float: right; */
+}
+.form-box-1{
+  margin-top: 125px;
+  margin-left: 113px;
+  background-color: white(97, 15, 248, 0.89);
+	border: black;
+	padding: 40px;
+	border-radius: 5px;
+	box-shadow: 5em 10em #74a0cfce(127, 15, 255);
+	width: 500px;
+	height: 430px;
+	border: 1px solid rgb(70, 9, 211);
+}
+.form-box-1:before {
+
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	content: "";
+	float:left;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+	display: block;
+	filter: blur(2px);
+}
+
+.form-box-1 .header-text {
+	font-size: 32px;
+	font-weight: 600;
+	padding-bottom: 30px;
+	text-align: center;
+	color: rgb(20, 60, 240);
+}
+.form-box-1 input {
+	margin: 10px 0px;
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+	font-size: 18px;
+	font-family: poppins;
+	border: 1px solid rgb(84, 13, 216);
+}
+.form-box-1 input[type=checkbox] {
+	display: none;
+}
+.form-box-1 label {
+	position: relative;
+	margin-left: 5px;
+	margin-right: 10px;
+	top: 5px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+.form-box-1 label:before {
+	content: "";
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: #ddd;
+}
+.form-box-1 input[type=checkbox]:checked+label:before {
+	content: "\2713";
+	font-size: 20px;
+	color: #000;
+	text-align: center;
+	line-height: 20px;
+}
+.form-box-1 span {
+	font-size: 14px;
+}
+.form-box-1 button {
+	background-color: rgb(109, 26, 243) (76, 0, 255);
+	
+	color: rgb(253, 253, 253);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 18px;
+	padding: 10px;
+	margin: 20px 0px;
+}
+span a {
+	color: #BBB;
+}
+
+@media screen and (max-width:1240px) {
+  .column1 .card-img-top {
+    width: 508px;
+    height: 500px;
+  }
+  .card-js {
+    margin-left: 69px;
+  }
+  .form-box-1{
+    margin-left: -3px;
+    margin-right: 115px;
+  }
+}
+@media screen and (max-width:988px) {
+  .column1{
+    display: none;
+  }
+  .column2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .form-box-1{
+    width: 100%;
+  }
+}
