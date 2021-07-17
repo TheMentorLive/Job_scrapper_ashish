@@ -41,8 +41,10 @@
         <input type="text" id="job" placeholder="Enter Job Profile" name="job" ><br>
         <input type="text" id="location" placeholder="Enter Location" name="location" ><br><br>
         {%csrf_token%}
-        <button type="submit" style="background-color: rgba(63, 7, 218, 0.815);"> Fresher </button>
-        <button type="submit" style="background-color: rgba(63, 7, 218, 0.815);"> Experienced </button>
+        <div class="radio-container" style="display: inline-block;">
+          <input type="radio" name="fresher" id="">Fresher &nbsp;&nbsp;&nbsp;
+          <input type="radio" name="experienced" id="">Experienced
+        </div>
         <button type="submit" style="background-color: rgba(63, 7, 218, 0.815);"> Submit </button>
       </form> 
     </div>
